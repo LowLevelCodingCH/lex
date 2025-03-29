@@ -16,7 +16,7 @@ int main(int argc,
     switch (argc) {
     case 2:
         if (strcmp(argv[1], "rbase") == 0)
-            lex_rbase();
+            lex_rbase(); break;
         if (strcmp(argv[1], "init") == 0)
             lex_init();
         else return fprintf(stderr, "No valid command: %s\n", argv[1]);

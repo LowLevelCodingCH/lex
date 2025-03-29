@@ -46,10 +46,10 @@ void lex_rebase(int argc, char **argv)
     read(fd, buffer, f_len);
     close(fd);
 
-    sprintf(ename, "%s/%s", ".lex", fname);
+    sprintf(ename, ".lex/%s", fname);
     if (strcmp(flag, "--message") == 0) sprintf(rbs, "REBASED: %s\nMessage: %s", fname, message);
 
-    fd = open(ename, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+    fd = open(ename, O_CREAT | O_RDWR);
     chmod(ename, 0777);
     write(fd, buffer, f_len);
     close(fd);
